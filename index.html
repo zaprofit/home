@@ -3,430 +3,133 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>YouTube Empire - Build Your Online Business</title>
-    <link href="https://fonts.googleapis.com/css2?family=Arial:wght@700&family=Open+Sans&display=swap" rel="stylesheet">
+    <title>YouTube Empire Builder - Turn Your Channel Into Profit</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
-        /* Reset and Global Styles */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        
         body {
             font-family: 'Open Sans', sans-serif;
             background-color: #000000;
             color: #FFFFFF;
-            line-height: 1.6;
-            opacity: 0;
-            transition: opacity 1s ease-in-out;
         }
-        
-        body.loaded {
-            opacity: 1;
-        }
-        
-        h1, h2, h3 {
-            font-family: 'Arial', sans-serif;
+        .hero-title {
+            font-size: 60px;
             font-weight: bold;
-        }
-        
-        h1 {
             color: #FF0000;
-            font-size: 48px;
-            margin-bottom: 20px;
         }
-        
-        h2 {
-            color: #FF0000;
-            font-size: 36px;
-            margin-bottom: 15px;
-        }
-        
-        h3 {
-            color: #FFFFFF;
-            font-size: 24px;
-            margin-bottom: 10px;
-        }
-        
-        p {
-            font-size: 18px;
-            margin-bottom: 15px;
-        }
-        
-        a {
-            color: #FF0000;
-            text-decoration: none;
-        }
-        
-        a:hover {
-            text-decoration: underline;
-        }
-        
-        .container {
-            width: 90%;
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 20px 0;
-        }
-        
-        .btn {
-            display: inline-block;
+        .btn-primary {
             background-color: #FF0000;
-            color: #FFFFFF;
-            padding: 12px 30px;
-            border-radius: 5px;
-            font-weight: bold;
-            text-transform: uppercase;
-            transition: background-color 0.3s;
-            border: none;
-            cursor: pointer;
-            font-size: 18px;
+            transition: all 0.3s ease;
         }
-        
-        .btn:hover {
+        .btn-primary:hover {
             background-color: #CC0000;
         }
-        
-        /* Header */
-        header {
-            text-align: center;
-            padding: 60px 0;
-            background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url('https://images.unsplash.com/photo-1611162616475-46b635cb6868?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80') no-repeat center center/cover;
-        }
-        
-        header p.subtitle {
-            font-size: 24px;
-            color: #FFFFFF;
-            max-width: 800px;
-            margin: 0 auto;
-        }
-        
-        /* Sections */
-        section {
-            padding: 60px 0;
-        }
-        
-        .section-intro {
-            display: flex;
-            align-items: center;
-            gap: 40px;
-        }
-        
-        .section-intro .text {
-            flex: 1;
-        }
-        
-        .section-intro .image {
-            flex: 1;
-            border-radius: 10px;
-            overflow: hidden;
-        }
-        
-        .section-intro .image img {
-            width: 100%;
-            height: auto;
-            display: block;
-        }
-        
-        .benefits {
-            background-color: #111111;
-            text-align: center;
-        }
-        
-        .benefits-container {
-            display: flex;
-            justify-content: space-between;
-            flex-wrap: wrap;
-            gap: 30px;
-            margin-top: 40px;
-        }
-        
-        .benefit {
-            flex: 1;
-            min-width: 300px;
-            padding: 30px;
-            background-color: #1A1A1A;
-            border-radius: 10px;
-            transition: transform 0.3s;
-        }
-        
-        .benefit:hover {
-            transform: translateY(-10px);
-        }
-        
-        .benefit-icon {
-            font-size: 50px;
-            color: #FF0000;
-            margin-bottom: 20px;
-        }
-        
-        .testimonial {
-            display: flex;
-            align-items: center;
-            gap: 40px;
-            background-color: #1A1A1A;
-            padding: 40px;
-            border-radius: 10px;
-        }
-        
-        .testimonial-image {
-            width: 200px;
-            height: 200px;
-            border-radius: 50%;
-            overflow: hidden;
-            flex-shrink: 0;
-        }
-        
-        .testimonial-image img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-        
-        .testimonial-text {
-            flex: 1;
-        }
-        
-        .testimonial-text p.quote {
-            font-style: italic;
-            font-size: 20px;
-            margin-bottom: 20px;
-        }
-        
-        .testimonial-text p.author {
-            font-weight: bold;
-            color: #FF0000;
-        }
-        
-        /* Form */
-        .cta {
-            text-align: center;
-            background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url('https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80') no-repeat center center/cover;
-            padding: 80px 0;
-        }
-        
-        .cta-form {
-            max-width: 600px;
-            margin: 40px auto 0;
-            background-color: rgba(26, 26, 26, 0.9);
-            padding: 40px;
-            border-radius: 10px;
-        }
-        
-        .form-group {
-            margin-bottom: 20px;
-            text-align: left;
-        }
-        
-        .form-group label {
-            display: block;
-            margin-bottom: 8px;
-            font-weight: bold;
-        }
-        
-        .form-group input {
-            width: 100%;
-            padding: 12px 15px;
-            border-radius: 5px;
-            border: 1px solid #333;
-            background-color: #222;
-            color: #FFF;
-            font-size: 16px;
-        }
-        
-        .success-message {
-            display: none;
-            background-color: #1A1A1A;
-            padding: 30px;
-            border-radius: 10px;
-            margin-top: 20px;
-        }
-        
-        /* Footer */
-        footer {
-            background-color: #111;
-            padding: 30px 0;
-            text-align: center;
-        }
-        
-        .footer-links {
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-            margin-bottom: 20px;
-        }
-        
-        /* Animations */
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-        
         .fade-in {
-            animation: fadeIn 1s ease-in-out forwards;
+            animation: fadeIn 1s;
         }
-        
-        /* Responsive */
-        @media (max-width: 768px) {
-            .section-intro, .testimonial {
-                flex-direction: column;
-            }
-            
-            .testimonial-image {
-                margin-bottom: 20px;
-            }
-            
-            h1 {
-                font-size: 36px;
-            }
-            
-            header p.subtitle {
-                font-size: 20px;
-            }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        .benefit-card {
+            border-radius: 5px;
+            transition: transform 0.3s ease;
+        }
+        .benefit-card:hover {
+            transform: translateY(-5px);
         }
     </style>
 </head>
-<body>
-    <header>
-        <div class="container">
-            <h1>TURN YOUR PASSION INTO PROFIT WITH YOUTUBE</h1>
-            <p class="subtitle">Discover the proven method that's helped over 5,000 people build profitable businesses with their own channels - even if you've never recorded a video before!</p>
-        </div>
+<body class="min-h-screen">
+    <!-- Header -->
+    <header class="container mx-auto px-4 py-8 text-center fade-in">
+        <h1 class="hero-title mb-4">YouTube Empire Builder</h1>
+        <p class="text-2xl">Turn Your Passion Into Profit With Our Proven YouTube Business Blueprint</p>
     </header>
-    
-    <section class="section-intro container fade-in">
-        <div class="text">
-            <h2>THE DREAM OF MAKING A LIVING ON YOUTUBE CAN BE YOURS</h2>
-            <p>Have you ever imagined waking up every morning to new views and revenue entering your account just for sharing what you love?</p>
-            <p>YouTube isn't just entertainment - it's one of the most powerful business platforms in the world. With 2 billion monthly active users, the opportunities are limitless.</p>
-            <p>But here's the secret: Building a successful channel isn't about luck or innate talent. It's about following a <strong>proven system</strong> that anyone can learn.</p>
+
+    <!-- Hero Section -->
+    <section class="container mx-auto px-4 py-12 flex flex-col md:flex-row items-center gap-8">
+        <div class="md:w-1/2 fade-in">
+            <h2 class="text-4xl font-bold mb-6 text-red-600">Stop Wasting Time On YouTube!</h2>
+            <p class="text-lg mb-6">Thousands of creators struggle to make their first dollar online. Our system has helped over 5,000 students build profitable YouTube businesses in record time.</p>
+            <p class="text-lg mb-8">The secret? Our <span class="font-bold text-red-600">YouTube Empire Builder</span> ebook reveals the exact strategies we used to grow channels to 100,000+ subscribers and $10,000+/month in passive income.</p>
+
+            <div class="bg-gray-800 p-6 rounded-lg mb-8">
+                <h3 class="text-2xl font-bold mb-4 text-red-600">What You'll Learn:</h3>
+                <ul class="space-y-3">
+                    <li class="flex items-start"><i class="fas fa-check text-red-600 mt-1 mr-2"></i> <span>The exact niche selection method that guarantees views</span></li>
+                    <li class="flex items-start"><i class="fas fa-check text-red-600 mt-1 mr-2"></i> <span>Video creation system that takes just 2 hours per video</span></li>
+                    <li class="flex items-start"><i class="fas fa-check text-red-600 mt-1 mr-2"></i> <span>Monetization strategies beyond AdSense (6-figure methods)</span></li>
+                    <li class="flex items-start"><i class="fas fa-check text-red-600 mt-1 mr-2"></i> <span>Our secret growth hacking techniques that get videos ranked</span></li>
+                </ul>
+            </div>
+
+            <a href="#purchase" class="btn-primary inline-block py-4 px-8 rounded-full font-bold text-white hover:bg-red-800 transition duration-300 text-lg">
+                BUY THE EBOOK NOW <i class="fas fa-arrow-right ml-2"></i>
+            </a>
         </div>
-        <div class="image">
-            <img src="https://images.unsplash.com/photo-1626785774573-4b799315345d?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Happy content creator">
+
+        <div class="md:w-1/2 fade-in">
+            <img src="https://via.placeholder.com/500x600.png?text=YouTube+Empire+Builder+Ebook" alt="YouTube Empire Builder" class="rounded-lg shadow-lg">
         </div>
     </section>
-    
-    <section class="benefits">
-        <div class="container">
-            <h2 class="fade-in">WHY YOUTUBE IS THE BEST PLATFORM FOR YOUR BUSINESS</h2>
-            <p class="fade-in">While others struggle with mysterious algorithms and constant changes, YouTube offers unique benefits:</p>
-            
-            <div class="benefits-container">
-                <div class="benefit fade-in" style="animation-delay: 0.2s">
-                    <div class="benefit-icon">💰</div>
-                    <h3>Multiple Income Streams</h3>
-                    <p>Ads, sponsorships, digital products, affiliates and more. Diversify your revenue and secure your financial future.</p>
+
+    <!-- Benefits Section -->
+    <section class="container mx-auto px-4 py-16">
+        <h2 class="text-4xl font-bold mb-12 text-center text-red-600 fade-in">Why This Works When Nothing Else Does</h2>
+
+        <div class="grid md:grid-cols-3 gap-8">
+            <div class="benefit-card bg-gray-900 p-6 rounded-lg fade-in">
+                <div class="text-red-600 text-4xl mb-4">
+                    <i class="fas fa-bolt"></i>
                 </div>
-                
-                <div class="benefit fade-in" style="animation-delay: 0.4s">
-                    <div class="benefit-icon">🌎</div>
-                    <h3>Global Audience</h3>
-                    <p>Your videos can be watched anywhere in the world, 24/7, generating revenue even while you sleep.</p>
-                </div>
-                
-                <div class="benefit fade-in" style="animation-delay: 0.6s">
-                    <div class="benefit-icon">⏱️</div>
-                    <h3>Time Freedom</h3>
-                    <p>Imagine being able to work whenever you want, from wherever you want, with no boss, no fixed schedule and no income ceiling.</p>
-                </div>
+                <h3 class="text-xl font-bold mb-3">Fast Results</h3>
+                <p class="text-gray-300">Our students typically see their first $1,000 month within 90 days of implementing our strategies.</p>
             </div>
-        </div>
-    </section>
-    
-    <section class="container fade-in">
-        <div class="testimonial">
-            <div class="testimonial-image">
-                <img src="https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Success testimonial">
-            </div>
-            <div class="testimonial-text">
-                <p class="quote">"In less than 1 year applying the method, my channel reached 100,000 subscribers and now generates over $3,000 per month. The best investment I've ever made in my life!"</p>
-                <p class="author">- Sarah Johnson, former office worker</p>
-                <p>Left her stable job after 8 months with YouTube and now travels the world while her channel grows</p>
-            </div>
-        </div>
-    </section>
-    
-    <section class="cta">
-        <div class="container">
-            <h2 class="fade-in">READY TO TAKE THE FIRST STEP?</h2>
-            <p class="fade-in">Sign up now to receive our <strong>free 5-day training</strong> and discover:</p>
-            
-            <div class="cta-form fade-in">
-                <form id="leadForm">
-                    <div class="form-group">
-                        <label for="name">Your Name:</label>
-                        <input type="text" id="name" name="name" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="email">Your Best Email:</label>
-                        <input type="email" id="email" name="email" required>
-                    </div>
-                    <button type="submit" class="btn">GET MY FREE ACCESS</button>
-                </form>
-                
-                <div id="successMessage" class="success-message">
-                    <h3>🎉 Congratulations! You've taken the first step to change your life!</h3>
-                    <p>We've sent the training link to your email. Check your inbox (and spam folder) in the next few minutes.</p>
-                    <p><strong>Tip:</strong> Watch the first lesson today - the sooner you start, the faster you'll see results!</p>
+            <div class="benefit-card bg-gray-900 p-6 rounded-lg fade-in">
+                <div class="text-red-600 text-4xl mb-4">
+                    <i class="fas fa-chart-line"></i>
                 </div>
+                <h3 class="text-xl font-bold mb-3">Scalable System</h3>
+                <p class="text-gray-300">Once you implement our framework, scaling to $10k/month becomes a matter of consistent execution.</p>
+            </div>
+            <div class="benefit-card bg-gray-900 p-6 rounded-lg fade-in">
+                <div class="text-red-600 text-4xl mb-4">
+                    <i class="fas fa-users"></i>
+                </div>
+                <h3 class="text-xl font-bold mb-3">Community Support</h3>
+                <p class="text-gray-300">Join a private network of successful YouTubers for support and collaboration opportunities.</p>
             </div>
         </div>
     </section>
-    
-    <footer>
-        <div class="container">
-            <div class="footer-links">
-                <a href="#">Terms of Service</a>
-                <a href="#">Privacy Policy</a>
-                <a href="#">Contact</a>
+
+    <!-- CTA Section -->
+    <section id="purchase" class="bg-gray-900 py-16 fade-in">
+        <div class="container mx-auto px-4 text-center">
+            <h2 class="text-4xl font-bold mb-6 text-red-600">Build Your YouTube Empire Today</h2>
+            <p class="text-xl mb-8 max-w-2xl mx-auto">No fluff, just the strategies that work. Get the full ebook and start building a profitable YouTube channel now.</p>
+            <a href="#" class="btn-primary inline-block py-4 px-8 rounded-full font-bold text-white hover:bg-red-800 transition duration-300 text-lg">
+                BUY NOW FOR $39 <i class="fas fa-shopping-cart ml-2"></i>
+            </a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-black py-12">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="mb-6 md:mb-0">
+                    <h3 class="text-2xl font-bold text-red-600">YouTube Empire Builder</h3>
+                    <p class="text-gray-400 mt-2">Turn Your Channel Into Profit</p>
+                </div>
+                <div class="flex space-x-6">
+                    <a href="#" class="text-gray-400 hover:text-white transition duration-300">Privacy Policy</a>
+                    <a href="#" class="text-gray-400 hover:text-white transition duration-300">Terms of Service</a>
+                    <a href="#" class="text-gray-400 hover:text-white transition duration-300">Contact</a>
+                </div>
             </div>
-            <p>2025 Zaprofit. All rights reserved.</p>
-            <p>This site is not affiliated with YouTube or Google LLC.</p>
         </div>
     </footer>
-    
-    <script>
-        // Loading animation
-        document.addEventListener('DOMContentLoaded', function() {
-            setTimeout(function() {
-                document.body.classList.add('loaded');
-                
-                // Animate elements with fade-in class
-                const fadeElements = document.querySelectorAll('.fade-in');
-                fadeElements.forEach((el, index) => {
-                    el.style.animationDelay = `${index * 0.1}s`;
-                });
-            }, 100);
-        });
-        
-        // Form submission
-        document.getElementById('leadForm').addEventListener('submit', function(e) {
-            e.preventDefault();
-            
-            // Simulate form submission
-            setTimeout(function() {
-                document.getElementById('leadForm').style.display = 'none';
-                document.getElementById('successMessage').style.display = 'block';
-                
-                // Scroll to success message
-                document.getElementById('successMessage').scrollIntoView({
-                    behavior: 'smooth'
-                });
-            }, 1000);
-        });
-        
-        // Button hover effects
-        const buttons = document.querySelectorAll('.btn');
-        buttons.forEach(button => {
-            button.addEventListener('mouseenter', function() {
-                this.style.backgroundColor = '#CC0000';
-            });
-            
-            button.addEventListener('mouseleave', function() {
-                this.style.backgroundColor = '#FF0000';
-            });
-        });
-    </script>
 </body>
 </html>
